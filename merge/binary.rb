@@ -4,20 +4,12 @@ module Merge
       operand = :"#{direction}="
       [].tap do |output|
         until list_a.empty? || list_b.empty?
-          output.push(if list_a.first.send(operand, list_b.first)
-                        list_a.shift
-                      else
-                        list_b.shift
-                      end)
+          to_shift = list_a.first.send(operand, list_b.first) ? :a : :b
+          output.push(binding.local_variable_get(:"list_#{to_shift}").shift)
         end
-        list_a.inject(output) { |o, a_item| o.push a_item } unless list_a.empty?
-        list_b.inject(output) { |o, b_item| o.push b_item } unless list_b.empty?
+        output.push(*list_a) unless list_a.empty?
+        output.push(*list_b) unless list_b.empty?
       end
     end
-
-    a = [1, 3, 4, 5, 6, 8]
-    b = [3, 3, 4, 4, 5, 6, 7, 8, 9]
-
-    puts call a, b
   end
 end
