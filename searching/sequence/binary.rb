@@ -5,13 +5,16 @@ module Searching
       def self.call(target, list = [])
         left = 0
         right = list.length - 1
-        return if left > right
+        m = 0
+        until list[m] == target
+          return if left > right
 
-        m = (left + right) / 2
+          m = (left + right) / 2
 
-        return m if list[m] == target
-        return call(target, list[(m + 1)..right]) if list[m] < target
-        return call(target, list[left..(m - 1)]) if list[m] > target
+          return m if list[m] == target
+          left = m + 1 if list[m] < target
+          right = m - 1 if list[m] > target
+        end
       end
     end
   end
