@@ -1,6 +1,13 @@
 module Searching
   module Sequence
-    # TODO: incorrect cannot use recursion, as the index, not the object itself is needed.
+    # Performs a binary search for a given target on a sorted list 
+    #   and returns the index it is found at.
+    #
+    # @param target [*] The target to search for.
+    # @param list [Array] The list upon which to perform the search.
+    #
+    # @return [Integer] The index of the target if found.
+    # @return [nil] if the target is not in the list.
     class Binary
       def self.call(target, list = [])
         left = 0
