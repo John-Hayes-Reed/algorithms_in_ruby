@@ -26,7 +26,7 @@ module Sorting
                   unsorted_list = nil)
       return if algorithms.empty?
 
-      Benchmark.bm do |bm|
+      Benchmark.bmbm do |bm|
         algorithms.each do |alg|
           bm.report("Sorting::#{alg.to_s.capitalize}") do
             iterations.times do
