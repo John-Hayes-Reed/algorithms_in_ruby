@@ -1,5 +1,5 @@
 module Merging
-  # @abstract A Service for taking two sorted list, and merging them into a
+  # A Service for taking two sorted list, and merging them into a
   #   single sorted list. Each item in the lists must be comparable, ie. It must
   #   respond to and implement the Ruby comparison methods
   #   (:<, :<=, :==, :>=, :>, :<=>), at the very least they should implement the

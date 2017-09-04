@@ -32,6 +32,9 @@ module Sorting
     #                        TestCompare.new(2),
     #                        TestCompare.new(3)]
     #   #=> [#<TestCompa...@comp_val=2>, #<Te...@comp_val=3>, #<...@comp_val=4>]
+    # @param list [Array] An unsorted list.
+    # @param pivot_index [Fixnum] the position of the pivot element.
+    # @return [Array] The sorted list.
     def self.call(list, pivot_index = 0)
       return list unless list.length > 1
       pivot = list[pivot_index]
