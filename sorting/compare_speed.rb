@@ -2,6 +2,7 @@ require 'benchmark'
 require './sorting/bubble'
 require './sorting/insertion'
 require './sorting/merge'
+require './sorting/quick'
 module Sorting
   # A Service class for comparing the speeds of different sorting algorithms
   #   available in the Sorting module.
