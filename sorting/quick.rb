@@ -35,10 +35,17 @@ module Sorting
     # @param list [Array] An unsorted list.
     # @return [Array] The sorted list.
     def self.call(list)
-      return list unless list.length > 1
-      pivot = list[0]
+      return list unless list.length > 1 # return if list is sorted (1 entry).
+      pivot = list[0] # the pivot is the first element of the list
+
+      # split all other elements based on if they are smaller than the pivot.
       left, right = list[1..-1].partition { |list_item| list_item < pivot }
-      call(left) + [pivot] + call(right)
+
+      # Recursively call quick sort on the partitioned left and right arrays,
+      #   sort the list as the concatenation of sorted left, pivot element, and
+      #   sorted right.
+      list.clear
+      list.push(*call(left) + [pivot] + call(right))
     end
   end
 end

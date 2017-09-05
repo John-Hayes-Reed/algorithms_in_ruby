@@ -42,10 +42,13 @@ module Sorting
     # @return [Array] The sorted list.
     def self.call(list, dir = :<)
       (n = list.length).times do |i|
-        min = i
-        (i + 1..n - 1).each { |j| min = j if list[j].send(dir, list[min]) }
-        next if min == i
+        min = i # The current minimum element index is the first.
 
+        # Iterate over list, and set min to the smallest element in the list.
+        (i + 1..n - 1).each { |j| min = j if list[j].send(dir, list[min]) }
+        next if min == i # skip swap if same value is in position.
+
+        # swap the lowest element and move it to the end of sorted sublist.
         x = list[i]
         list[i] = list[min]
         list[min] = x

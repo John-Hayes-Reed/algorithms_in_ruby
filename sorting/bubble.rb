@@ -36,14 +36,17 @@ module Sorting
     #   sorted.
     def self.call(list, dir = :>)
       loop do
-        swapped = false
+        swapped = false # no swaps have happened.
         (list.count - 1).times do |n|
+          # skip to next iteration if a swap is not necessary.
           next unless (tmp = list[n]).send(dir, list[(m = n + 1)])
-          swapped = (list[n] = list[m]) && (list[m] = tmp) # swap neighbours
+          swapped = (list[n] = list[m]) && (list[m] = tmp) # swap neighbours.
         end
-        break unless swapped # if a swap occurred, run another iteration.
+
+        # if a swap occurred, run another iteration on the whole list.
+        break unless swapped
       end
-      list
+      list # Return list (not really required as method is destructive).
     end
   end
 end

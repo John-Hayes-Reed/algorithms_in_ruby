@@ -40,12 +40,15 @@ module Sorting
     def self.call(list)
       i = 1
       while i < list.length
-        x = list[i]
-        j = i - 1
+        x = list[i] # The leftmost element of the unsorted list.
+        j = i - 1 # j is the index of the rightmost element in sorted list.
+
+        # Keep moving sorted elements up an index while they are larger then the
+        #   unsorted element currently being looked at.
         (list[j + 1] = list[j]) && j -= 1 while j >= 0 && list[j] > x
-        (list[j + 1] = x) && i += 1
+        (list[j + 1] = x) && i += 1 # Insert the element in its sorted position.
       end
-      list
+      list # Return the list. (not really required as method is destructive).
     end
   end
 end
