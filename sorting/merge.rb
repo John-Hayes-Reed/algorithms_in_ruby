@@ -1,12 +1,7 @@
 require './merging/binary'
 module Sorting
-  # @abstract a Service that executes a MergeSort on any given list. Each item
-  #   in the list must be comparable, ie. It must respond to and implement the
-  #   Ruby comparison methods (:<, :<=, :==, :>=, :>, :<=>), at the very least
-  #   they should implement the default :< used in the binary merge after the
-  #   list has been split.
-  #
-  # @see
+  # A Service that executes a Merge Sort on any given list. Each item
+  #   in the list must be comparable.
   class Merge
     # Splits an unsorted list up into multiple sorted lists
     #   (ie. single value list = sorted) and BinaryMerges them back into a
@@ -15,11 +10,9 @@ module Sorting
     # @example Using Integers.
     #   Sorting::Merge.call [5, 3, 7, 3, 1, 4]
     #   #=> [1, 3, 3, 4, 5, 7]
-    #
     # @example Using Strings.
     #   Sorting::Merge.call ['b', 'e', 'a', 'a', 'a', 'f']
     #   #=> ['a', 'a', 'a', 'b', 'e', 'f']
-    #
     # @example Using custom comparable class instances.
     #   class TestCompare
     #     include Comparable
@@ -38,11 +31,9 @@ module Sorting
     #                        TestCompare.new(2),
     #                        TestCompare.new(3)]
     #   #=> [#<TestCompa...@comp_val=2>, #<Te...@comp_val=3>, #<...@comp_val=4>]
-    #
     # @param list [Array] An unsorted list
     # @param dir [Symbol] the direction to sort the list, defaults to :< for an
     #   ascending sort, pass :> if a descending sort is desired
-    #
     # @return [Array] A sorted list
     def self.call(list, dir = :<)
       return list if list.length <= 1 # Already Sorted

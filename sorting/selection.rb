@@ -5,10 +5,13 @@ module Sorting
     # Sorts a list by splitting the list into two sections: an already sorted
     #   list built up from left to right at the front, and an unsorted list that
     #   occupies the rest of the list. These list are identified by the current
-    #   iteration, i. Anything to the left of i is sorted, everything else is
+    #   iteration, ie. Anything to the left of i is sorted, everything else is
     #   yet to be checked. Therefore at the beginning of the algorithm the list
     #   can be seen as the sorted sublist being empty, and the unsorted list
-    #   comprising of the whole list itself.
+    #   comprising of the whole list itself. On each iteration the algorithm
+    #   finds the smallest element in the unsorted list (right side), and swaps
+    #   it with the left most element of the unsorted list, making it the last
+    #   and newest element in the sorted list.
     # @example using Integers
     #   Sorting::Selection.call [5, 3, 7, 3, 1, 4]
     #   #=> [1, 3, 3, 4, 5, 7]

@@ -1,6 +1,6 @@
 module Searching
   module Sequence
-    # Performs a binary search for a given target on a sorted list 
+    # Performs a binary search for a given target on a sorted list
     #   and returns the index it is found at.
     #
     # @param target [*] The target to search for.

@@ -3,8 +3,8 @@ module Sorting
   # list must be comparable.
   class Bubble
     # Iterates over an unsorted list swapping neighbouring elements of the list
-    #   if they are unsorted as it goes. This task is repeated until an iteration
-    #   with no swaps required has occurred.
+    #   if they are unsorted as it goes. This task is repeated until an
+    #   iteration with no swaps required has occurred.
     # @example using Integers
     #   Sorting::Bubble.call [5, 3, 7, 3, 1, 4]
     #   #=> [1, 3, 3, 4, 5, 7]

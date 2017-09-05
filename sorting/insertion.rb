@@ -2,9 +2,14 @@ module Sorting
   # @abstract a Service that executes an Insertion Sort on any given list. Each
   #   item in the list must be comparable.
   class Insertion
-    # Iterates over a list, on each iteration, insertion sort removes an element
-    #   from the input data, finds the location it belongs to within the sorted
-    #   list and inserts it there.
+    # Insertion sort takes a list, and splits it into two sections: an already
+    #   sorted list built up from the left to right at the front, and an
+    #   unsorted list that occupies the rest of the list. Therefore at the
+    #   beginning of the algorithm the list can be seen as the sorted sublist
+    #   being empty, and the unsorted list comprising of the whole list itself.
+    #   The algorithm itself iterates over a list, on each iteration, insertion
+    #   sort removes the left most element of the unsorted list finds the
+    #   location it belongs to within the sorted list and inserts it there.
     # @see https://en.wikipedia.org/wiki/Insertion_sort
     # @example using Integers
     #   Sorting::Insertion.call [5, 3, 7, 3, 1, 4]

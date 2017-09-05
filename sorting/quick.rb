@@ -4,9 +4,9 @@ module Sorting
   class Quick
     # Takes a list and partitions it into two lists by comparing each element of
     #   the list against a given pivot and seeing if it is smaller than the
-    #   pivot or not. It the proceeds to recursively quicksort the resulting
-    #   'left' and 'right' arrays returning a merge of the quicksorted left,
-    #   pivot element, and quicksorted right.
+    #   pivot or not. It the proceeds to recursively quick sort the resulting
+    #   'left' and 'right' arrays returning a merge of the quick sorted left,
+    #   pivot element, and quick sorted right.
     # @see https://en.wikipedia.org/wiki/Quicksort
     # @example using Integers
     #   Sorting::Quick.call [5, 3, 7, 3, 1, 4]
@@ -33,11 +33,10 @@ module Sorting
     #                        TestCompare.new(3)]
     #   #=> [#<TestCompa...@comp_val=2>, #<Te...@comp_val=3>, #<...@comp_val=4>]
     # @param list [Array] An unsorted list.
-    # @param pivot_index [Fixnum] the position of the pivot element.
     # @return [Array] The sorted list.
-    def self.call(list, pivot_index = 0)
+    def self.call(list)
       return list unless list.length > 1
-      pivot = list[pivot_index]
+      pivot = list[0]
       left, right = list[1..-1].partition { |list_item| list_item < pivot }
       call(left) + [pivot] + call(right)
     end
