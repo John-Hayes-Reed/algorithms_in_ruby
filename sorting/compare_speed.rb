@@ -31,7 +31,7 @@ module Sorting
       Benchmark.bmbm do |bm|
         algorithms.each do |alg|
           sort = Sorting.const_get(:"#{alg.to_s.capitalize}")
-          bm.report(service.name) do
+          bm.report(sort.name) do
             iterations.times { sort.call list.dup || DEFAULT_UNSORTED_LIST.dup }
           end
         end

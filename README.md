@@ -18,18 +18,18 @@ An exercise in implementing various well known algorithms using meta programming
 
 | algorithm | user | system | total | real |
 | :--- | ---: | ---: | ---: | ---: |
-| Sorting::Bubble | 2.700000 | 0.030000 | 2.730000 | (  2.751345) |
-| Sorting::Insertion | 0.310000 | 0.010000 | 0.320000 | (  0.323272) |
-| Sorting::Merge | 0.330000 | 0.000000| 0.330000 | (  0.334680) |
-| Sorting::Quick | 0.030000 | 0.000000 | 0.030000 | (  0.027656) |
-| Sorting::Selection | 1.080000 | 0.010000 | 1.090000 | (  1.091762) |
+| Sorting::Bubble | 2.790000 | 0.010000 | 2.80000 | (2.816131) |
+| Sorting::Insertion | 0.310000 | 0.000000 | 0.310000 | (0.313924) |
+| Sorting::Merge | 0.220000 | 0.000000| 0.220000 | (0.221678) |
+| Sorting::Quick | 0.040000 | 0.010000 | 0.050000 | (0.042796) |
+| Sorting::Selection | 1.180000 | 0.010000 | 1.190000 | (1.325389) |
 
 #### 100 iterations
 
 | algorithm | user | system | total | real |
 | :--- | ---: | ---: | ---: | ---: |
-| Sorting::Bubble | 26.420000 | 0.120000 | 26.540000 | (26.947886) |
-| Sorting::Insertion| 3.160000 | 0.010000 | 3.170000 | (3.182545) |
-| Sorting::Merge | 3.360000 | 0.020000 | 3.380000 | (3.407699) |
-| Sorting::Quick | 0.270000 | 0.000000 | 0.270000 | (0.273215) |
-| Sorting::Selection | 10.520000 | 0.040000 | 10.560000 | (10.709383) |
+| Sorting::Bubble | 27.950000 | 0.290000 | 28.240000 | (28.905603) |
+| Sorting::Insertion| 3.320000 | 0.050000 | 3.370000 | (3.483312) |
+| Sorting::Merge | 2.630000 | 0.040000 | 2.670000 | (2.825823) |
+| Sorting::Quick | 0.380000 | 0.010000 | 0.390000 | (0.409806) |
+| Sorting::Selection | 11.930000 | 0.140000 | 12.070000 | (12.464465) |
