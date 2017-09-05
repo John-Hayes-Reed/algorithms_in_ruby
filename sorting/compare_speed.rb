@@ -19,22 +19,20 @@ module Sorting
     #   compare.
     # @param iterations [Fixnum] the number of iterations to run for each
     #   algorithm's benchmark.
-    # @param unsorted_list [Array, nil] The list to use for the Benchmark test.
+    # @param list [Array, nil] The list to use for the Benchmark test.
     #   if nothing given, uses ::DEFAULT_UNSORTED_LIST which is a list
     #   containing 1000 unsorted integers.
     # @return [Array<Benchmark::Tms>]
     def self.call(algorithms = [],
                   iterations = 10,
-                  unsorted_list = nil)
+                  list = nil)
       return if algorithms.empty?
 
       Benchmark.bmbm do |bm|
         algorithms.each do |alg|
-          bm.report("Sorting::#{alg.to_s.capitalize}") do
-            iterations.times do
-              Sorting.const_get(:"#{alg.to_s.capitalize}")
-                     .call unsorted_list || DEFAULT_UNSORTED_LIST.dup
-            end
+          sort = Sorting.const_get(:"#{alg.to_s.capitalize}")
+          bm.report(service.name) do
+            iterations.times { sort.call list.dup || DEFAULT_UNSORTED_LIST.dup }
           end
         end
       end
