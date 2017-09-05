@@ -31,5 +31,5 @@ An exercise in implementing various well known algorithms using meta programming
 | Sorting::Bubble | 26.420000 | 0.120000 | 26.540000 | (26.947886) |
 | Sorting::Insertion| 3.160000 | 0.010000 | 3.170000 | (3.182545) |
 | Sorting::Merge | 3.360000 | 0.020000 | 3.380000 | (3.407699) |
-| Sorting::Quick | 0.310000 | 0.000000 | 0.310000 | (0.311379) |
+| Sorting::Quick | 0.270000 | 0.000000 | 0.270000 | (0.273215) |
 | Sorting::Selection | 10.520000 | 0.040000 | 10.560000 | (10.709383) |
