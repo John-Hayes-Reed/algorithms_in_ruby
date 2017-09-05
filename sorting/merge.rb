@@ -37,14 +37,10 @@ module Sorting
     # @return [Array] A sorted list
     def self.call(list, dir = :<)
       return list if list.length <= 1 # Already Sorted
-
-      left  = []
-      right = []
-      list.each_with_index do |list_item, i|
-        receiver = i < (list.length / 2) ? :left : :right
-        binding.local_variable_get(receiver).send :<<, list_item
-      end
-
+      # split the list down the middle into two separate left and right arrays.
+      left, right = list.partition.with_index { |_x, i| i < (list.length / 2) }
+      # recursively split the new left and right arrays, then binary merge the
+      #   result.
       Merging::Binary.call call(left), call(right), dir
     end
   end
